@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GUI_Group_Project.Database;
+using GUI_Group_Project.UI;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI_Group_Project
 {
@@ -26,9 +16,9 @@ namespace GUI_Group_Project
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {
-            //RegisterWindow registerWindow = new RegisterWindow();
-            //registerWindow.Show();
-            //this.Hide();
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            this.Close();
 
         }
 
@@ -55,31 +45,31 @@ namespace GUI_Group_Project
 
         private void LoginButton_Click_1(object sender, RoutedEventArgs e)
         {
-            //using (CustomerContext context = new CustomerContext())
-            //{
-            //    var custmer = context.Customers.FirstOrDefault(c => c.Username == UsernameTextBox.Text || c.Email == UsernameTextBox.Text || c.ID.ToString() == UsernameTextBox.Text);
-            //    if (custmer != null)
-            //    {
-            //        if (custmer.Password == LoginPasswordBox.Password)
-            //        {
-            //            Application.Current.Properties["custmer"] = custmer;
-            //            MessageBox.Show("Login Successfull  " + custmer.FirstName);
-            //            Profile profile = new Profile();
-            //            profile.Show();
-            //            this.Close();
-            //        }
+            using (CustomerContext context = new CustomerContext())
+            {
+                var custmer = context.Customers.FirstOrDefault(c => c.Username == UsernameTextBox.Text || c.Email == UsernameTextBox.Text || c.ID.ToString() == UsernameTextBox.Text);
+                if (custmer != null)
+                {
+                    if (custmer.Password == LoginPasswordBox.Password)
+                    {
+                        Application.Current.Properties["custmer"] = custmer;
+                        MessageBox.Show("Login Successfull  " + custmer.FirstName);
+                        Profile profile = new Profile();
+                        profile.Show();
+                        this.Close();
+                    }
 
-            //        else
-            //        {
-            //            MessageBox.Show("Invalid Password!");
-            //        }
-            //    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Password!");
+                    }
+                }
 
-            //    else
-            //    {
-            //        MessageBox.Show("Invalid Username or UserId!");
-            //    }
-            //}
+                else
+                {
+                    MessageBox.Show("Invalid Username or UserId!");
+                }
+            }
         }
     }
 }

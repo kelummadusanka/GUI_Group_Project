@@ -1,0 +1,505 @@
+﻿<UserControl x:Class="GUI_Group_Project.UI.ProfileDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:GUI_Group_Project.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+
+        <TabControl
+           
+                materialDesign:ColorZoneAssist.Mode="PrimaryLight" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem>
+                <TabItem.Header >
+                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Account" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
+                        <TextBlock Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Profile</TextBlock>
+                    </StackPanel>
+
+                </TabItem.Header>
+
+
+
+                <Grid>
+                    <Grid.Resources>
+                        <!--<Style TargetType="{x:Type materialDesign:PackIcon}" BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
+                            <Setter Property="Foreground" Value="green" />
+                            <Setter Property="Width" Value="25"/>
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Margin" Value="5"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>-->
+                        <Style TargetType="{x:Type TextBlock}" >
+                            <Setter Property="Foreground" Value="red" />
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="175px"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Kind="AccountCircle" 
+                                             Grid.Row="0"
+                                             Grid.Column="1"
+                                             Height="150"
+                                             Width="150"
+                                             VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                    <Grid Grid.Row="1" Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="75"></RowDefinition>
+                            <RowDefinition  Height="75"></RowDefinition>
+                            <RowDefinition  Height="75"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="FaceMan" />
+                            <TextBlock Text="Name" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="CardAccountDetails"/>
+                            <TextBlock Text="ID No" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="Cake" />
+                            <TextBlock Text="Birthday" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"  
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <TextBlock Text="kelum madusanka"  Grid.Row="0" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="972812650v"  Grid.Row="1" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="1997-41-48"  Grid.Row="2" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="20 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition  Height="50"></RowDefinition>
+                            <RowDefinition  Height="50"></RowDefinition>
+                            <RowDefinition  Height="50"></RowDefinition>
+                            <RowDefinition  Height="50"></RowDefinition>
+                            <RowDefinition  Height="50"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="MapMarker" />
+                            <TextBlock Text="Address" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"   
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="EmailBox" />
+                            <TextBlock Text="Email" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="Phone"  />
+                            <TextBlock Text="Telephone" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+
+                        <TextBlock Text="b25"  Grid.Row="0" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="Muwapitiya"  Grid.Row="1" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="Rambukkana"  Grid.Row="2" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="7100"  Grid.Row="3" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="ikelummadusnaka@gmial.com"  
+                                       Grid.Row="4" 
+                                       Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="0719683928"  
+                                       Grid.Row="5" 
+                                       Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="3" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="75"></RowDefinition>
+                            <RowDefinition  Height="75"></RowDefinition>
+  
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="ClipboardAccount"/>
+                            <TextBlock Text="Username" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                            <materialDesign:PackIcon Kind="Sim"/>
+                            <TextBlock Text="User ID" 
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <TextBlock Text="kelum"  Grid.Row="0" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"  
+                                       FontSize="20px"
+                                       Margin="5"/>
+                        <TextBlock Text="001"  Grid.Row="1" Grid.Column="2"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="20px"
+                                       Margin="5"/>
+
+                    </Grid>
+
+
+
+                </Grid>
+
+
+            </TabItem>
+            <TabItem>
+                <TabItem.Header >
+                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="HumanEdit" 
+                                                 Margin="10" 
+                                                 VerticalAlignment="Center" 
+                                                 HorizontalAlignment="Center" 
+                                                 Height="30" 
+                                                 Width="30"/>
+                        <TextBlock Margin="10" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" 
+                                   FontSize="24"
+                                   Text="Edit Profile">
+                            
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0"
+                            Grid.Row="0"
+                            Margin="80 30">
+                        
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="StackPanel">
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    
+                                    <Setter Property="Margin" Value="10"/>
+                                </Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="Margin" Value="10 0"/>
+                                </Style>
+
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="0"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Origin" />
+                                <TextBlock>Frist Name</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="1"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Lastpass" />
+                                <TextBlock>Last Name</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="2"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="CardAccountDetails" />
+                                <TextBlock>ID</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="3"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Candle" />
+                                <TextBlock>Birthday</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="4"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="MapMarkerOutline" />
+                                <TextBlock>Address line 1</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="5"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="RoadVariant" />
+                                <TextBlock>Steet</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="6"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="City" />
+                                <TextBlock>City</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="7"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Ferry" />
+                                <TextBlock>Ship code</TextBlock>
+                            </StackPanel>
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Name="FirstNameEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="First Name"/>
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Name="LastNameEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Last Name"/>
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Name="IDEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="ID"/>
+                            <DatePicker
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Pick Date"/>
+                            <TextBox
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Name="AddressEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Address 1"/>
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Name="StreetEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Street"/>
+                            <TextBox
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Name="CityEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="City"/>
+                            <TextBox
+                                Grid.Row="7"
+                                Grid.Column="1"
+                                Name="ShipCodeEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Ship Code"/>
+                          
+                        </Grid>
+                        
+                    </Border>
+                    <Border Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="80 30">
+
+                        <Grid>
+                            <Grid.Resources>
+                                <Style TargetType="StackPanel">
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+
+                                    <Setter Property="Margin" Value="10"/>
+                                </Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="Margin" Value="10 0"/>
+                                </Style>
+
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="0"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Gmail" />
+                                <TextBlock>Email</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="1"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Deskphone" />
+                                <TextBlock>Telephone</TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                    Grid.Row="2"
+                                    Grid.Column="0">
+                                <materialDesign:PackIcon Kind="CardAccountDetails" />
+                            </StackPanel>
+                           
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Name="EmailEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Email"/>
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Name="TeleEdit"
+                                Margin="10 0"
+                                VerticalAlignment="Center"
+                                materialDesign:HintAssist.Hint="Telephone"/>
+                        </Grid>
+
+                    </Border>
+                    <Grid  Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0"
+                                Margin="80 0 50 0"
+                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                Background="Blue"
+                                materialDesign:ButtonAssist.CornerRadius="25"
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                                <TextBlock Text="Clear" />
+                        </Button>
+                        <Button Grid.Column="1"
+                                Margin="50 0 80 0"
+                                Padding="2"
+                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                materialDesign:ButtonAssist.CornerRadius="25"
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                                <TextBlock Text="Update" />
+                        </Button>
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header >
+                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Billiards" 
+                                                 Margin="10" 
+                                                 VerticalAlignment="Center" 
+                                                 HorizontalAlignment="Center" 
+                                                 Height="30" 
+                                                 Width="30"/>
+                        <TextBlock Margin="10" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" 
+                                   FontSize="24"
+                                   Text="My Lottery">
+
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+
+
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

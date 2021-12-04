@@ -1,0 +1,36 @@
+﻿<Window x:Class="GUI_Group_Project.UI.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_Group_Project"
+        mc:Ignorable="d"
+        Title="Register"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Height="720" Width="1280" 
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Transitioner SelectedIndex="0" Margin="0">
+            <local:PersonalInfo />
+            <local:ContactInfo />
+            <local:LoginInfo />
+        </materialDesign:Transitioner>
+
+        <Rectangle Grid.Row="1" Fill="#FF388E3C"  Margin="0,0,-0.4,0.4"></Rectangle>
+        
+    </Grid>
+</Window>
