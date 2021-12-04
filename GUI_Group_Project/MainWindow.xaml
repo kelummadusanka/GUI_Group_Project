@@ -4,9 +4,145 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_Group_Project"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#00000000"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" 
+        Height="720" Width="1280" 
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Visibility="Visible">
+    <Window.Resources>
+        <Style x:Key="MyRectangleStyle" TargetType="Rectangle">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Stroke" Value="#FF0CFFC6"></Setter>
+                    <Setter Property="StrokeThickness" Value="3"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Rectangle Fill="White" RadiusX="25" RadiusY="25" Grid.ColumnSpan="6" Margin="0,0,-0.4,0.2"></Rectangle>
+        <Rectangle RadiusX="25" RadiusY="25" Grid.ColumnSpan="2" Margin="0,0,0.6,0.2" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF91EB1C" Offset="1"/>
+                    <GradientStop Color="#FF0CFFC6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock Foreground="White" FontSize="60" FontWeight="Bold" Margin="58,230,77,301" Grid.ColumnSpan="2"><Run Text="Let's Begin Today"/><LineBreak/><Run Text="   Sign up Now"/></TextBlock>
+
+
+
+        <StackPanel Width="auto" Margin="10.4,10,9.6,10.2" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4">
+
+            <TextBlock Width="auto" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0,20,0,10"> Welcome Back</TextBlock>
+            <TextBlock Margin="0,20,0,10" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"> Login into Lottery</TextBlock>
+
+            <Grid Margin="20,20,20,20">
+                <Rectangle Style="{StaticResource MyRectangleStyle}" MaxWidth="400"  Height="75" Stroke="DarkGreen" RadiusX="20" RadiusY="20"></Rectangle>
+                <StackPanel Width="auto" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Account" Width="33" Foreground="green" Height="53" Margin="100,25,0,0" Opacity=".5" RenderTransformOrigin="0.398,0.762"/>
+                    <TextBox x:Name="UsernameTextBox" FontSize="18" materialDesign:TextFieldAssist.HasClearButton="True"
+                             materialDesign:HintAssist.Hint="Username" Margin="12,30,20,31.8" Width="290" MaxWidth="300" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Margin="20,20,20,20">
+                <Rectangle MaxWidth="400" Width="auto" Height="75" Stroke="DarkGreen"  RadiusX="20" RadiusY="20"></Rectangle>
+                <StackPanel Width="auto"
+                    Orientation="Horizontal">
+
+                    <materialDesign:PackIcon Kind="KeyChain" Width="30" Height="30" Foreground="green"  Margin="100,30,10,0" Opacity=".5"/>
+
+                    <Grid>
+                        <PasswordBox
+                            x:Name="LoginPasswordBox" Margin="0,30,10,29.8" FontSize="18"
+                            MaxWidth="300"
+                            materialDesign:HintAssist.Hint="Password" 
+                            materialDesign:TextFieldAssist.HasClearButton="True" 
+                            Width="300"  />
+
+                        <TextBox 
+                            Text="{Binding ElementName=LoginPasswordBox, Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            x:Name="PasswordTxtBox"
+                            Margin="0,30,20,29.8"
+                            MaxWidth="300"
+                            FontSize="18"
+                            Width="auto"
+                            materialDesign:TextFieldAssist.HasClearButton="True" 
+                            Visibility="Hidden"/>
+
+                    </Grid>
+
+                    <ToggleButton
+                        
+                        Style="{StaticResource MaterialDesignActionToggleButton}"
+                        ToolTip="MaterialDesignActionLightToggleButton"
+                        Content="{materialDesign:PackIcon Kind=EyeOffOutline}"
+                        materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=EyeOutline}" RenderTransformOrigin="2.091,0.465" Margin="0,26,0,26.8" Background="{x:Null}" 
+                        Checked="ToggleButton_Checked" 
+                        Unchecked="ToggleButton_UnChecked"/>
+
+
+                </StackPanel>
+
+            </Grid>
+
+
+            <Button
+                x:Name="LoginButton"
+                Margin="20,20,20,20"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                Height="40" MaxWidth="400" Width="auto"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="Login to your account" Click="LoginButton_Click_1">
+                <TextBlock 
+                    Text="Login"
+                    TextAlignment="Center">
+                </TextBlock>
+            </Button>
+            <StackPanel Width="auto" Orientation="Horizontal" Margin="140,10,140,10">
+                <TextBlock
+                    Text="Forgot  password ?"
+                    Foreground="DodgerBlue"
+                    HorizontalAlignment="Center"
+                    Width="auto"
+                    Margin="10,10,20,10"
+                    FontSize="16">
+
+                </TextBlock>
+                <Button 
+                    x:Name="SignupBtn"
+                    Content="Sign up For Lottery" 
+                    FontFamily="Roboto"
+                    FontWeight="Regular"
+                    Width="156"
+                    ToolTip="Sign up for Our ystem before continue"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="DodgerBlue" FontSize="16"
+                    Click="SignupBtn_Click"/>
+
+            </StackPanel>
+        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="452*"/>
+            <ColumnDefinition Width="186*"/>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="418*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="87*"/>
+        </Grid.ColumnDefinitions>
     </Grid>
+
 </Window>
