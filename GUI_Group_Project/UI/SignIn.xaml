@@ -1,4 +1,4 @@
-﻿<Window x:Class="GUI_Group_Project.MainWindow"
+﻿<Window x:Class="GUI_Group_Project.SignIn"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="#00000000"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" 
+        Title="LottoApp" 
         Height="720" Width="1280" 
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Visibility="Visible">
     <Window.Resources>

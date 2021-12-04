@@ -69,7 +69,7 @@ namespace GUI_Group_Project
                 EmailSender.Emailsender(newCustomer.Email,newCustomer.Username, newCustomer.Password);
                 MessageBox.Show("Successfully Registerd");
                 mywindow.Close();
-                new MainWindow().Show(); 
+                new SignIn().Show(); 
 
             }
 
@@ -80,7 +80,7 @@ namespace GUI_Group_Project
 
                 var mywindow = Window.GetWindow(this);
                 mywindow.Close();
-                MainWindow mainWindow = new MainWindow();
+                SignIn mainWindow = new SignIn();
                 mainWindow.Show();
             }
 

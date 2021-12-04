@@ -6,9 +6,9 @@ using System.Windows;
 
 namespace GUI_Group_Project
 {
-    public partial class MainWindow : Window
+    public partial class SignIn : Window
     {
-        public MainWindow()
+        public SignIn()
         {
             InitializeComponent();
         }
