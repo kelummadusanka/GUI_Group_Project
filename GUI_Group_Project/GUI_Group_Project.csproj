@@ -89,13 +89,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database\CustomerContext.cs" />
+    <Compile Include="Database\DBContext.cs" />
     <Compile Include="EmailSender.cs" />
+    <Compile Include="Models\Boughtlotto.cs" />
+    <Compile Include="Models\Winninglotto.cs" />
+    <Compile Include="UI\calenderwindow.xaml.cs">
+      <DependentUpon>calenderwindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\confirmlotto.xaml.cs">
+      <DependentUpon>confirmlotto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\ContactInfo.xaml.cs">
       <DependentUpon>ContactInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginInfo.xaml.cs">
       <DependentUpon>LoginInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
@@ -120,11 +131,23 @@
     </Compile>
     <Compile Include="Infrastructure\PasswordBoxAssistant.cs" />
     <Compile Include="Infrastructure\ValidatableViewModelBase.cs" />
+    <Page Include="UI\calenderwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\confirmlotto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UI\ContactInfo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\LoginInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Dashboard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

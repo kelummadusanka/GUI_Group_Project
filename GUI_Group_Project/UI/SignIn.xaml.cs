@@ -45,7 +45,7 @@ namespace GUI_Group_Project
 
         private void LoginButton_Click_1(object sender, RoutedEventArgs e)
         {
-            using (CustomerContext context = new CustomerContext())
+            using (DBContext context = new DBContext())
             {
                 var custmer = context.Customers.FirstOrDefault(c => c.Username == UsernameTextBox.Text || c.Email == UsernameTextBox.Text || c.ID.ToString() == UsernameTextBox.Text);
                 if (custmer != null)
@@ -54,8 +54,8 @@ namespace GUI_Group_Project
                     {
                         Application.Current.Properties["custmer"] = custmer;
                         MessageBox.Show("Login Successfull  " + custmer.FirstName);
-                        Profile profile = new Profile();
-                        profile.Show();
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
                         this.Close();
                     }
 

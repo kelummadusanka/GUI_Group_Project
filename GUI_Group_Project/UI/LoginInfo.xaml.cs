@@ -40,7 +40,7 @@ namespace GUI_Group_Project
         {
             PersonalInfo personalInfo = PersonalInfo.Current;
             ContactInfo contactInfo = ContactInfo.Current;
-            CustomerContext Database = new CustomerContext();
+            DBContext Database = new DBContext();
             try
             {
                 Customer newCustomer = new Customer()
@@ -69,7 +69,7 @@ namespace GUI_Group_Project
                 EmailSender.Emailsender(newCustomer.Email,newCustomer.Username, newCustomer.Password);
                 MessageBox.Show("Successfully Registerd");
                 mywindow.Close();
-                new SignIn().Show(); 
+                new SignIn().Show();
 
             }
 
