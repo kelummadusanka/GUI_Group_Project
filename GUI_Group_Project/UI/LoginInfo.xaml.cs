@@ -68,7 +68,7 @@ namespace GUI_Group_Project
                 var mywindow = Window.GetWindow(this);
                 EmailSender.Emailsender(newCustomer.Email,newCustomer.Username, newCustomer.Password);
                 MessageBox.Show("Successfully Registerd");
-                mywindow.Close();
+                mywindow.Hide();
                 new SignIn().Show();
 
             }

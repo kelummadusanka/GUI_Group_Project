@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_Group_Project"
         mc:Ignorable="d" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Height="720" Width="1280" >
+      Height="720" Width="970" >
     <Grid>
 
         <TabControl
-           
                 materialDesign:ColorZoneAssist.Mode="PrimaryLight" >
             <TabItem>
                 <TabItem.Header >
-                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Background="AliceBlue" Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Account" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                         <TextBlock Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Profile</TextBlock>
                     </StackPanel>
@@ -32,8 +31,11 @@
                             <Setter Property="VerticalAlignment" Value="Center"/>
                         </Style>-->
                         <Style TargetType="{x:Type TextBlock}" >
-                            <Setter Property="Foreground" Value="red" />
+                            <Setter Property="Foreground" Value="Blue" />
                             <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="15"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="5"/>
                         </Style>
                     </Grid.Resources>
                     <Grid.RowDefinitions>
@@ -64,44 +66,20 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                             <materialDesign:PackIcon Kind="FaceMan" />
-                            <TextBlock Text="Name" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Name" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                             <materialDesign:PackIcon Kind="CardAccountDetails"/>
-                            <TextBlock Text="ID No" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="ID No"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
                             <materialDesign:PackIcon Kind="Cake" />
-                            <TextBlock Text="Birthday" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"  
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Birthday"/>
                         </StackPanel>
-                        <TextBlock Text="kelum madusanka"  Grid.Row="0" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="972812650v"  Grid.Row="1" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="1997-41-48"  Grid.Row="2" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
+                        <TextBlock Text="kelum madusanka"  Grid.Row="0" Grid.Column="2"/>
+                        <TextBlock Text="972812650v"  Grid.Row="1" Grid.Column="2" />
+                        <TextBlock Text="1997-41-48"  Grid.Row="2" Grid.Column="2" />
 
                     </Grid>
 
@@ -120,63 +98,35 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                             <materialDesign:PackIcon Kind="MapMarker" />
-                            <TextBlock Text="Address" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"   
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Address" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
                             <materialDesign:PackIcon Kind="EmailBox" />
-                            <TextBlock Text="Email" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Email"  />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
                             <materialDesign:PackIcon Kind="Phone"  />
-                            <TextBlock Text="Telephone" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Telephone"  />
                         </StackPanel>
 
-                        <TextBlock Text="b25"  Grid.Row="0" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="Muwapitiya"  Grid.Row="1" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="Rambukkana"  Grid.Row="2" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="7100"  Grid.Row="3" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="ikelummadusnaka@gmial.com"  
-                                       Grid.Row="4" 
-                                       Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
+                        <TextBlock Text="b25" 
+                                   Grid.Row="0" 
+                                   Grid.Column="2" />
+                        <TextBlock Text="Muwapitiya"
+                                   Grid.Row="1" 
+                                   Grid.Column="2" />
+                        <TextBlock Text="Rambukkana"
+                                   Grid.Row="2" 
+                                   Grid.Column="2" />
+                        <TextBlock Text="7100"
+                                   Grid.Row="3" 
+                                   Grid.Column="2" />
+                        <TextBlock Text="ikelummadusnaka@gmial.com" 
+                                   Grid.Row="4" 
+                                   Grid.Column="2"/>
                         <TextBlock Text="0719683928"  
-                                       Grid.Row="5" 
-                                       Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
+                                    Grid.Row="5" 
+                                    Grid.Column="2"  />
 
                     </Grid>
                     <Grid Grid.Row="1" Grid.Column="3" >
@@ -191,31 +141,19 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                             <materialDesign:PackIcon Kind="ClipboardAccount"/>
-                            <TextBlock Text="Username" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center" 
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="Username" />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                             <materialDesign:PackIcon Kind="Sim"/>
-                            <TextBlock Text="User ID" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
+                            <TextBlock Text="User ID"/>
                         </StackPanel>
-                        <TextBlock Text="kelum"  Grid.Row="0" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"  
-                                       FontSize="20px"
-                                       Margin="5"/>
-                        <TextBlock Text="001"  Grid.Row="1" Grid.Column="2"
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Center"
-                                       FontSize="20px"
-                                       Margin="5"/>
+                        <TextBlock Text="kelum" 
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+                        <TextBlock Text="001"
+                                   Grid.Row="1"
+                                   Grid.Column="2" />
 
                     </Grid>
 
