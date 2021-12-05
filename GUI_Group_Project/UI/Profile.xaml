@@ -77,9 +77,16 @@
                             <materialDesign:PackIcon Kind="Cake" />
                             <TextBlock Text="Birthday"/>
                         </StackPanel>
-                        <TextBlock Text="kelum madusanka"  Grid.Row="0" Grid.Column="2"/>
-                        <TextBlock Text="972812650v"  Grid.Row="1" Grid.Column="2" />
-                        <TextBlock Text="1997-41-48"  Grid.Row="2" Grid.Column="2" />
+                        <TextBlock Text="{Binding FirstName}"
+                                   x:Name="ProfileName" 
+                                   Grid.Row="0"
+                                   Grid.Column="2"/>
+                        <TextBlock Text="{Binding IDCard}"
+                                   Grid.Row="1" 
+                                   Grid.Column="2" />
+                        <TextBlock Text="{Binding BirthDay}" 
+                                   Grid.Row="2"
+                                   Grid.Column="2" />
 
                     </Grid>
 
@@ -109,22 +116,22 @@
                             <TextBlock Text="Telephone"  />
                         </StackPanel>
 
-                        <TextBlock Text="b25" 
+                        <TextBlock Text="{Binding Address}"
                                    Grid.Row="0" 
                                    Grid.Column="2" />
-                        <TextBlock Text="Muwapitiya"
+                        <TextBlock Text="{Binding Street}"
                                    Grid.Row="1" 
                                    Grid.Column="2" />
-                        <TextBlock Text="Rambukkana"
+                        <TextBlock Text="{Binding City}"
                                    Grid.Row="2" 
                                    Grid.Column="2" />
-                        <TextBlock Text="7100"
+                        <TextBlock Text="{Binding Zipcode}"
                                    Grid.Row="3" 
                                    Grid.Column="2" />
-                        <TextBlock Text="ikelummadusnaka@gmial.com" 
+                        <TextBlock Text="{Binding Email}"
                                    Grid.Row="4" 
                                    Grid.Column="2"/>
-                        <TextBlock Text="0719683928"  
+                        <TextBlock Text="{Binding Mobile}"
                                     Grid.Row="5" 
                                     Grid.Column="2"  />
 
@@ -148,10 +155,10 @@
                             <materialDesign:PackIcon Kind="Sim"/>
                             <TextBlock Text="User ID"/>
                         </StackPanel>
-                        <TextBlock Text="kelum" 
+                        <TextBlock Text="{Binding Username}"
                                    Grid.Row="0"
                                    Grid.Column="2"/>
-                        <TextBlock Text="001"
+                        <TextBlock Text="{Binding ID}"
                                    Grid.Row="1"
                                    Grid.Column="2" />
 

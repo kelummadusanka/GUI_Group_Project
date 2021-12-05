@@ -1,4 +1,5 @@
 ﻿using GUI_Group_Project.Database;
+using GUI_Group_Project.Models;
 using GUI_Group_Project.UI;
 using System.ComponentModel;
 using System.Linq;
@@ -45,16 +46,19 @@ namespace GUI_Group_Project
 
         private void LoginButton_Click_1(object sender, RoutedEventArgs e)
         {
+
             using (DBContext context = new DBContext())
             {
+               
                 var custmer = context.Customers.FirstOrDefault(c => c.Username == UsernameTextBox.Text || c.Email == UsernameTextBox.Text || c.ID.ToString() == UsernameTextBox.Text);
                 if (custmer != null)
                 {
                     if (custmer.Password == LoginPasswordBox.Password)
                     {
-                        Application.Current.Properties["custmer"] = custmer;
+                        Application.Current.Properties["ID"] = custmer.ID;
                         MessageBox.Show("Login Successfull  " + custmer.FirstName);
                         Dashboard dashboard = new Dashboard();
+                        
                         dashboard.Show();
                         this.Close();
                     }
