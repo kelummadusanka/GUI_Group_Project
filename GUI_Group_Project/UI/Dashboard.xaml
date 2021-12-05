@@ -9,7 +9,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-        xmlns:local="clr-namespace:GUI_Group_Project"
+        xmlns:local="clr-namespace:GUI_Group_Project.UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
@@ -298,20 +298,20 @@
     Header="{materialDesign:PackIcon Kind=AccountCircle, Size=35}"
     Style="{StaticResource MaterialDesignNavigationRailTabItem}">
 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+                <local:Profile/>
+
+
+
+
+
+
+
+
+
+
+
+
             </TabItem>
 
 
