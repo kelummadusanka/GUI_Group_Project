@@ -24,7 +24,7 @@
                 <Grid>
                     <Grid.Resources>
                         <!--<Style TargetType="{x:Type materialDesign:PackIcon}" BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
-                            <Setter Property="Foreground" Value="green" />
+                            <Setter Property="Foreground" Value="Green" />
                             <Setter Property="Width" Value="25"/>
                             <Setter Property="Height" Value="25"/>
                             <Setter Property="Margin" Value="5"/>
@@ -54,118 +54,167 @@
                                              Width="150"
                                              VerticalAlignment="Center"
                                              HorizontalAlignment="Center"/>
-                    <Grid Grid.Row="1" Grid.Column="0" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="75"></RowDefinition>
-                            <RowDefinition  Height="75"></RowDefinition>
-                            <RowDefinition  Height="75"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="FaceMan" />
-                            <TextBlock Text="Name" />
-                        </StackPanel>
+                    <Border Grid.Row="1" Grid.Column="0" Margin="20 10" Padding="30">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10"
+                                                   RadiusY="10"
+                                                   Rect="0,0,280,300"/>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="CardAccountDetails"/>
-                            <TextBlock Text="ID No"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="Cake" />
-                            <TextBlock Text="Birthday"/>
-                        </StackPanel>
-                        <TextBlock Text="{Binding FirstName}"
+                        </Border.Clip>
+                        <Grid>
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"></RowDefinition>
+                                <RowDefinition  Height="75"></RowDefinition>
+                                <RowDefinition  Height="75"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="FaceMan" />
+                                <TextBlock Text="Name" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="CardAccountDetails"/>
+                                <TextBlock Text="ID No"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Cake" />
+                                <TextBlock Text="Birthday"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding FirstName}"
                                    x:Name="ProfileName" 
                                    Grid.Row="0"
                                    Grid.Column="2"/>
-                        <TextBlock Text="{Binding IDCard}"
+                            <TextBlock Text="{Binding IDCard}"
                                    Grid.Row="1" 
                                    Grid.Column="2" />
-                        <TextBlock Text="{Binding BirthDay}" 
+                            <TextBlock Text="{Binding BirthDay}" 
                                    Grid.Row="2"
                                    Grid.Column="2" />
 
-                    </Grid>
+                        </Grid>
 
-                    <Grid Grid.Row="1" Grid.Column="1" Margin="20 10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition  Height="50"></RowDefinition>
-                            <RowDefinition  Height="50"></RowDefinition>
-                            <RowDefinition  Height="50"></RowDefinition>
-                            <RowDefinition  Height="50"></RowDefinition>
-                            <RowDefinition  Height="50"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="MapMarker" />
-                            <TextBlock Text="Address" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="EmailBox" />
-                            <TextBlock Text="Email"  />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="Phone"  />
-                            <TextBlock Text="Telephone"  />
-                        </StackPanel>
 
-                        <TextBlock Text="{Binding Address}"
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="1" Margin="20 10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10"
+                                                   RadiusY="10"
+                                                   Rect="0,0,280,300"/>
+
+                        </Border.Clip>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition  Height="30"></RowDefinition>
+                                <RowDefinition  Height="30"></RowDefinition>
+                                <RowDefinition  Height="30"></RowDefinition>
+                                <RowDefinition  Height="50"></RowDefinition>
+                                <RowDefinition  Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="MapMarker" />
+                                <TextBlock Text="Address" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="EmailBox" />
+                                <TextBlock Text="Email"  />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Phone"  />
+                                <TextBlock Text="Telephone"  />
+                            </StackPanel>
+
+                            <TextBlock Text="{Binding Address}"
                                    Grid.Row="0" 
                                    Grid.Column="2" />
-                        <TextBlock Text="{Binding Street}"
+                            <TextBlock Text="{Binding Street}"
                                    Grid.Row="1" 
                                    Grid.Column="2" />
-                        <TextBlock Text="{Binding City}"
+                            <TextBlock Text="{Binding City}"
                                    Grid.Row="2" 
                                    Grid.Column="2" />
-                        <TextBlock Text="{Binding Zipcode}"
+                            <TextBlock Text="{Binding Zipcode}"
                                    Grid.Row="3" 
                                    Grid.Column="2" />
-                        <TextBlock Text="{Binding Email}"
+                            <TextBlock Text="{Binding Email}"
+                                   TextWrapping="Wrap"
                                    Grid.Row="4" 
                                    Grid.Column="2"/>
-                        <TextBlock Text="{Binding Mobile}"
+                            <TextBlock Text="{Binding Mobile}"
                                     Grid.Row="5" 
                                     Grid.Column="2"  />
 
-                    </Grid>
-                    <Grid Grid.Row="1" Grid.Column="3" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="75"></RowDefinition>
-                            <RowDefinition  Height="75"></RowDefinition>
+                        </Grid>
 
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="ClipboardAccount"/>
-                            <TextBlock Text="Username" />
-                        </StackPanel>
+                    </Border>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                            <materialDesign:PackIcon Kind="Sim"/>
-                            <TextBlock Text="User ID"/>
-                        </StackPanel>
-                        <TextBlock Text="{Binding Username}"
+                    <Border  Grid.Row="1" Grid.Column="3" Margin="20 10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10"
+                                                   RadiusY="10"
+                                                   Rect="0,0,280,300"/>
+
+                        </Border.Clip>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"></RowDefinition>
+                                <RowDefinition  Height="75"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="ClipboardAccount"/>
+                                <TextBlock Text="Username" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                                <materialDesign:PackIcon Kind="Sim"/>
+                                <TextBlock Text="User ID"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding Username}"
                                    Grid.Row="0"
                                    Grid.Column="2"/>
-                        <TextBlock Text="{Binding ID}"
+                            <TextBlock Text="{Binding ID}"
                                    Grid.Row="1"
                                    Grid.Column="2" />
 
-                    </Grid>
+                        </Grid>
 
-
-
+                    </Border>
+                            
+                           
                 </Grid>
 
 

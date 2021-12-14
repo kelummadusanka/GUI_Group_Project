@@ -108,6 +108,9 @@
     <Compile Include="UI\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\ShowMyLottery.xaml.cs">
+      <DependentUpon>ShowMyLottery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
     <Page Include="UI\Dashboard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\ShowMyLottery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\SignIn.xaml">
       <Generator>MSBuild:Compile</Generator>

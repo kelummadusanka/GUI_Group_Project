@@ -1,6 +1,7 @@
 ﻿using GUI_Group_Project.Database;
 using GUI_Group_Project.Models;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -14,22 +15,40 @@ namespace GUI_Group_Project
         public Dashboard()
         {
             InitializeComponent();
+            using (DBContext context = new DBContext())
+            {
 
-            //using (DBrepo repository = new DBrepo())
-            //{
-            //    Winninglotto winninglotto = new Winninglotto()
-            //    {
-            //        LotteryID = 1,
-            //        No1 = 7,
-            //        No2 = 1,
-            //        No3 = 6,
-            //        Letter = "H"
+                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => w.Date.ToString("MM/dd/yyyy") == DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")) ;
+                if (yesterdayWinningLotto != null)
+                {
+                    Winninglotto ShowWinningLotto = new Winninglotto()
+                    {
+                        LotteryID = yesterdayWinningLotto.LotteryID,
+                        Date = yesterdayWinningLotto.Date,
+                        No1 = yesterdayWinningLotto.No1,
+                        No2 = yesterdayWinningLotto.No2,
+                        No3 = yesterdayWinningLotto.No3,
+                        Letter = yesterdayWinningLotto.Letter,
+                    };
 
+                    this.YeterWinningResult.DataContext = ShowWinningLotto;
 
-            //    };
-            //    repository.Winninglottos.Add(winninglotto);
-            //    repository.SaveChanges();
-            //}
+                }
+
+                else
+                {
+                    Winninglotto ShowWinningLotto = new Winninglotto()
+                    {
+                        LotteryID = yesterdayWinningLotto.LotteryID,
+                        Date = yesterdayWinningLotto.Date,
+                        No1 = yesterdayWinningLotto.No1,
+                        No2 = yesterdayWinningLotto.No2,
+                        No3 = yesterdayWinningLotto.No3,
+                        Letter = yesterdayWinningLotto.Letter,
+                    };
+                    this.YeterWinningResult.DataContext = ShowWinningLotto;
+                }
+            }
         }
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
