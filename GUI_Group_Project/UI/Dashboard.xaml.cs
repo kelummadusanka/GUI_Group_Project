@@ -20,9 +20,9 @@ namespace GUI_Group_Project
             InitializeComponent();
             using (DBContext context = new DBContext())
             {
-                var dateyester = DateTime.Today.AddDays(-1).Date;
-                Console.WriteLine(dateyester);
-                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => EntityFunctions.TruncateTime(w.Date) == dateyester  );
+                var yesterday = DateTime.Today.AddDays(-1).Date;
+                Console.WriteLine(yesterday);
+                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => EntityFunctions.TruncateTime(w.Date) == yesterday);
                 
                 if (yesterdayWinningLotto != null)
                 {
