@@ -56,6 +56,7 @@ namespace GUI_Group_Project
                     if (custmer.Password == LoginPasswordBox.Password)
                     {
                         Application.Current.Properties["ID"] = custmer.ID;
+                        Application.Current.Properties["FirstName"] = custmer.FirstName;
                         MessageBox.Show("Login Successfull  " + custmer.FirstName);
                         Dashboard dashboard = new Dashboard();
                         

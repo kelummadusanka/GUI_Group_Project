@@ -495,13 +495,13 @@
 
 
 
-        <materialDesign:Card Grid.Column="2" Grid.Row="1"
+        <materialDesign:Card x:Name="rightAside" Grid.Column="2" Grid.Row="1"
   materialDesign:ShadowAssist.ShadowDepth="Depth5"
   Padding="32">
             <StackPanel>
                 <materialDesign:PackIcon Kind="AccountCircle" HorizontalAlignment="Center" Height="133"  Width="133"/>
                 <GroupBox
-  Header="Hello, User"
+  Header="{Binding FirstName}"
   Style="{DynamicResource MaterialDesignGroupBox}"
   Margin="10"
   materialDesign:ShadowAssist.ShadowDepth="Depth3"

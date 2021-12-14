@@ -14,10 +14,16 @@ namespace GUI_Group_Project
     /// </summary>
     public partial class Dashboard : Window
     {
-        [Obsolete]
         public Dashboard()
         {
             InitializeComponent();
+            string rightAsideFirstName = Application.Current.Properties["FirstName"].ToString();
+            Customer customer = new Customer()
+            {
+                FirstName = "Hellow, " + rightAsideFirstName
+            };
+            
+            this.rightAside.DataContext = customer;
             using (DBContext context = new DBContext())
             {
                 var yesterday = DateTime.Today.AddDays(-1).Date;
