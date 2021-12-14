@@ -24,14 +24,14 @@
                 <Grid>
                     <Grid.Resources>
                         <!--<Style TargetType="{x:Type materialDesign:PackIcon}" BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
-                            <Setter Property="Foreground" Value="Green" />
+                            <Setter Property="Foreground" Value="Salmon" />
                             <Setter Property="Width" Value="25"/>
                             <Setter Property="Height" Value="25"/>
                             <Setter Property="Margin" Value="5"/>
                             <Setter Property="VerticalAlignment" Value="Center"/>
                         </Style>-->
                         <Style TargetType="{x:Type TextBlock}" >
-                            <Setter Property="Foreground" Value="Blue" />
+                            <Setter Property="Foreground" Value="White" />
                             <Setter Property="VerticalAlignment" Value="Center"/>
                             <Setter Property="FontSize" Value="15"/>
                             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -108,11 +108,11 @@
 
                     </Border>
 
-                    <Border Grid.Row="1" Grid.Column="1" Margin="20 10">
+                    <Border Grid.Row="1" Grid.Column="1" Margin="20 10" Padding="15">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                                <GradientStop Color="#4eff91" Offset="0.0"/>
+                                <GradientStop Color="#4eff78" Offset="0.0"/>
                             </LinearGradientBrush>
                         </Border.Background>
                         <Border.Clip>
@@ -160,9 +160,10 @@
                                    Grid.Row="3" 
                                    Grid.Column="2" />
                             <TextBlock Text="{Binding Email}"
-                                   TextWrapping="Wrap"
-                                   Grid.Row="4" 
-                                   Grid.Column="2"/>
+                                       FontSize="13"
+                                       TextWrapping="Wrap"
+                                       Grid.Row="4" 
+                                       Grid.Column="2"/>
                             <TextBlock Text="{Binding Mobile}"
                                     Grid.Row="5" 
                                     Grid.Column="2"  />
@@ -174,8 +175,8 @@
                     <Border  Grid.Row="1" Grid.Column="3" Margin="20 10">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                                <GradientStop Color="#ffc554" Offset="0.0"/>
+                                <GradientStop Color="#ffb73a" Offset="0.0"/>
                             </LinearGradientBrush>
                         </Border.Background>
                         <Border.Clip>
