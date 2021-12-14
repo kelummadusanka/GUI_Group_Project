@@ -1,6 +1,8 @@
 ﻿using GUI_Group_Project.Database;
 using GUI_Group_Project.Models;
 using System;
+using System.Data.Entity.Core.Objects;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,13 +14,16 @@ namespace GUI_Group_Project
     /// </summary>
     public partial class Dashboard : Window
     {
+        [Obsolete]
         public Dashboard()
         {
             InitializeComponent();
             using (DBContext context = new DBContext())
             {
-
-                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => w.Date.ToString("MM/dd/yyyy") == DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")) ;
+                var dateyester = DateTime.Today.AddDays(-1).Date;
+                Console.WriteLine(dateyester);
+                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => EntityFunctions.TruncateTime(w.Date) == dateyester  );
+                
                 if (yesterdayWinningLotto != null)
                 {
                     Winninglotto ShowWinningLotto = new Winninglotto()
@@ -32,22 +37,9 @@ namespace GUI_Group_Project
                     };
 
                     this.YeterWinningResult.DataContext = ShowWinningLotto;
-
+                    
                 }
 
-                else
-                {
-                    Winninglotto ShowWinningLotto = new Winninglotto()
-                    {
-                        LotteryID = yesterdayWinningLotto.LotteryID,
-                        Date = yesterdayWinningLotto.Date,
-                        No1 = yesterdayWinningLotto.No1,
-                        No2 = yesterdayWinningLotto.No2,
-                        No3 = yesterdayWinningLotto.No3,
-                        Letter = yesterdayWinningLotto.Letter,
-                    };
-                    this.YeterWinningResult.DataContext = ShowWinningLotto;
-                }
             }
         }
 

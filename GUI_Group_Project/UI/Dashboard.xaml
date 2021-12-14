@@ -13,7 +13,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -41,7 +41,7 @@
         <TabControl x:Name="myTabControl" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  materialDesign:ShadowAssist.ShadowDepth="Depth5"
   Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
   materialDesign:ColorZoneAssist.Mode="PrimaryMid" SelectionChanged="TabControl_SelectionChanged">
-            
+
             <TabItem 
                       
     Header="{materialDesign:PackIcon Kind=Home, Size=35}"
@@ -92,10 +92,18 @@
                             <Rectangle Grid.Column="2" Fill="#54bf66" Stroke="Black" Margin="5" />
                             <Rectangle Grid.Column="3" Fill="#39a34b" Stroke="Black" Margin="5" />-->
 
-                            <Border Grid.Column="0" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"> </Border>
-                            <Border Grid.Column="1" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"></Border>
-                            <Border Grid.Column="2" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"></Border>
-                            <Border Grid.Column="3" Margin="5" BorderBrush="#39a34b" BorderThickness="5,5,5,5"></Border>
+                            <Border x:Name="bx1" Grid.Column="0" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding No1}"></TextBlock>
+                            </Border>
+                            <Border x:Name="bx2" Grid.Column="1" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding No2}"></TextBlock>
+                            </Border>
+                            <Border x:Name="bx3" Grid.Column="2" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding No3}"></TextBlock>
+                            </Border>
+                            <Border x:Name="bx4" Grid.Column="3" Margin="5" BorderBrush="#39a34b" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Letter}"></TextBlock>
+                            </Border>
 
                             <Label HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="15">Number 1</Label>
                             <Label HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="15">Number 2</Label>
@@ -129,7 +137,7 @@
                 </Grid>
 
             </TabItem>
-            
+
             <TabItem
     Header="{materialDesign:PackIcon Kind=Bell, Size=35}"
     Style="{StaticResource MaterialDesignNavigationRailTabItem}">
@@ -137,7 +145,7 @@
                 <Grid>
 
                     <Grid.RowDefinitions>
-                        
+
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
@@ -145,8 +153,8 @@
                         <RowDefinition Height="5*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
-                        
-                        
+
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"></ColumnDefinition>
@@ -186,10 +194,18 @@
                             <Rectangle Grid.Column="2" Fill="#54bf66" Stroke="Black" Margin="5" />
                             <Rectangle Grid.Column="3" Fill="#39a34b" Stroke="Black" Margin="5" />-->
 
-                            <Border Grid.Column="0" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"></Border>
-                            <Border Grid.Column="1" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"></Border>
-                            <Border Grid.Column="2" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5"></Border>
-                            <Border Grid.Column="3" Margin="5" BorderBrush="#39a34b" BorderThickness="5,5,5,5"></Border>
+                            <Border Grid.Column="0" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">7</TextBlock>
+                            </Border>
+                            <Border Grid.Column="1" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">1</TextBlock>
+                            </Border>
+                            <Border Grid.Column="2" Margin="5" BorderBrush="#85de94" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">6</TextBlock>
+                            </Border>
+                            <Border Grid.Column="3" Margin="5" BorderBrush="#39a34b" BorderThickness="5,5,5,5">
+                                <TextBlock FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center">H</TextBlock>
+                            </Border>
 
                             <Label HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="15">Number 1</Label>
                             <Label HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="15">Number 2</Label>
@@ -209,7 +225,7 @@
 
 
             </TabItem>
-            
+
             <TabItem
     Header="{materialDesign:PackIcon Kind=Cards, Size=35}"
     Style="{StaticResource MaterialDesignNavigationRailTabItem}">
@@ -225,7 +241,7 @@
                         <RowDefinition Height="2*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
-                        
+
 
 
                     </Grid.RowDefinitions>
@@ -246,7 +262,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="6*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
-                                
+
                             </Grid.RowDefinitions>
 
                             <Grid.ColumnDefinitions>
@@ -267,11 +283,11 @@
                             <Label HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" FontSize="15">Number 3</Label>
                             <Label HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1" FontSize="15">Letter</Label>
 
-                            
+
 
 
                         </Grid>
-                        
+
 
                     </materialDesign:Card>
 
@@ -292,8 +308,8 @@
                 </Grid>
             </TabItem>
 
-            
-            
+
+
             <TabItem
     Header="{materialDesign:PackIcon Kind=AccountCircle, Size=35}"
     Style="{StaticResource MaterialDesignNavigationRailTabItem}">
@@ -327,7 +343,7 @@
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="0.5*"></RowDefinition>
                         <RowDefinition Height="3*"></RowDefinition>
-                        
+
                         <RowDefinition Height="*"></RowDefinition>
 
 
@@ -340,7 +356,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="50"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    
+
                     <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center">Help</Label>
 
                     <materialDesign:Card Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Margin="0,0,0,0"
@@ -406,12 +422,12 @@
 
 
                 </Grid>
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
 
             </TabItem>
 
@@ -443,7 +459,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center">About the Application</Label>
-                    
+
                     <materialDesign:Card Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="2" Margin="0,0,0,0"
   materialDesign:ShadowAssist.ShadowDepth="Depth5"
   Padding="32" Background="#FFF7F08E">
@@ -470,9 +486,9 @@
                 </Grid>
 
 
+
             </TabItem>
 
-            
 
 
         </TabControl>
@@ -483,9 +499,6 @@
   materialDesign:ShadowAssist.ShadowDepth="Depth5"
   Padding="32">
             <StackPanel>
-                <StackPanel.Resources>
-                    
-                </StackPanel.Resources>
                 <materialDesign:PackIcon Kind="AccountCircle" HorizontalAlignment="Center" Height="133"  Width="133"/>
                 <GroupBox
   Header="Hello, User"
@@ -502,8 +515,8 @@
         </materialDesign:Card>
 
 
-        
-        
+
+
 
 
     </Grid>
