@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI_Group_Project"
         mc:Ignorable="d" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Height="720" Width="970" >
-    <Grid>
+      Height="640" Width="970" >
+    <Grid Margin="0,0,0,-20">
 
         <TabControl
-                materialDesign:ColorZoneAssist.Mode="PrimaryLight" >
+                materialDesign:ColorZoneAssist.Mode="PrimaryLight" Height="620" VerticalAlignment="Top" >
             <TabItem>
                 <TabItem.Header >
-                    <StackPanel Background="AliceBlue" Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Width="310" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#4eff91" Offset="0.0"/>
+                                <GradientStop Color="#4eff78" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
                         <materialDesign:PackIcon Kind="Account" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Height="30" Width="30"/>
                         <TextBlock Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24">Profile</TextBlock>
                     </StackPanel>
@@ -24,7 +30,7 @@
                 <Grid>
                     <Grid.Resources>
                         <!--<Style TargetType="{x:Type materialDesign:PackIcon}" BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
-                            <Setter Property="Foreground" Value="Salmon" />
+                            <Setter Property="Foreground" Value="Black" />
                             <Setter Property="Width" Value="25"/>
                             <Setter Property="Height" Value="25"/>
                             <Setter Property="Margin" Value="5"/>
@@ -43,17 +49,19 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition/>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="321*"></ColumnDefinition>
+                        <ColumnDefinition Width="76*"/>
+                        <ColumnDefinition Width="246*"/>
+                        <ColumnDefinition Width="321*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="AccountCircle" 
                                              Grid.Row="0"
-                                             Grid.Column="1"
+                                             Grid.Column="2"
                                              Height="150"
                                              Width="150"
+                                             Foreground="Aqua"
                                              VerticalAlignment="Center"
-                                             HorizontalAlignment="Center"/>
+                                             HorizontalAlignment="Center" Margin="10,12,86,13"/>
                     <Border Grid.Row="1" Grid.Column="0" Margin="20 10" Padding="30">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
@@ -108,7 +116,7 @@
 
                     </Border>
 
-                    <Border Grid.Row="1" Grid.Column="1" Margin="20 10" Padding="15">
+                    <Border Grid.Row="1" Grid.Column="1" Margin="20 10" Padding="20,25" Grid.ColumnSpan="2">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                 <GradientStop Color="#4eff91" Offset="0.0"/>
@@ -172,8 +180,8 @@
 
                     </Border>
 
-                    <Border  Grid.Row="1" Grid.Column="3" Margin="20 10">
-                        <Border.Background>
+                    <Border  Grid.Row="1" Grid.Column="3"  Padding="20,45" Margin="20 10">
+                        <Border.Background> 
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                                 <GradientStop Color="#ffc554" Offset="0.0"/>
                                 <GradientStop Color="#ffb73a" Offset="0.0"/>
@@ -214,15 +222,21 @@
                         </Grid>
 
                     </Border>
-                            
-                           
+
+
                 </Grid>
 
 
             </TabItem>
             <TabItem>
                 <TabItem.Header >
-                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Width="310" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#ffc554" Offset="0.0"/>
+                                <GradientStop Color="#ffb73a" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
                         <materialDesign:PackIcon Kind="HumanEdit" 
                                                  Margin="10" 
                                                  VerticalAlignment="Center" 
@@ -257,7 +271,7 @@
                                 <Style TargetType="StackPanel">
                                     <Setter Property="VerticalAlignment" Value="Center"/>
 
-                                    <Setter Property="Margin" Value="10"/>
+                                    <Setter Property="Margin" Value="0,10"/>
                                 </Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="FontSize" Value="15"/>
@@ -333,55 +347,55 @@
                                 Name="FirstNameEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="First Name"/>
+                                materialDesign:HintAssist.Hint="{Binding FirstName}"/>
                             <TextBox
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Name="LastNameEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Last Name"/>
+                                 materialDesign:HintAssist.Hint="{Binding LastName}"/>
                             <TextBox
                                 Grid.Row="2"
                                 Grid.Column="1"
-                                Name="IDEdit"
+                                Name="IDCardEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="ID"/>
+                                materialDesign:HintAssist.Hint="{Binding IDCard}"/>
                             <DatePicker
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Pick Date"/>
+                                materialDesign:HintAssist.Hint="{Binding BirthDay}"/>
                             <TextBox
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 Name="AddressEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Address 1"/>
+                                materialDesign:HintAssist.Hint="{Binding Address}"/>
                             <TextBox
                                 Grid.Row="5"
                                 Grid.Column="1"
                                 Name="StreetEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Street"/>
+                                materialDesign:HintAssist.Hint="{Binding Street}"/>
                             <TextBox
                                 Grid.Row="6"
                                 Grid.Column="1"
                                 Name="CityEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="City"/>
+                                materialDesign:HintAssist.Hint="{Binding City}"/>
                             <TextBox
                                 Grid.Row="7"
                                 Grid.Column="1"
                                 Name="ShipCodeEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Ship Code"/>
+                                 materialDesign:HintAssist.Hint="{Binding Zipcode}"/>
 
                         </Grid>
 
@@ -435,14 +449,14 @@
                                 Name="EmailEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Email"/>
+                                 materialDesign:HintAssist.Hint="{Binding Email}"/>
                             <TextBox
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Name="TeleEdit"
                                 Margin="10 0"
                                 VerticalAlignment="Center"
-                                materialDesign:HintAssist.Hint="Telephone"/>
+                                 materialDesign:HintAssist.Hint="{Binding Mobile}"/>
                         </Grid>
 
                     </Border>
@@ -456,7 +470,7 @@
                                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                                 Background="Blue"
                                 materialDesign:ButtonAssist.CornerRadius="25"
-                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
                             <TextBlock Text="Clear" />
                         </Button>
                         <Button Grid.Column="1"
@@ -464,7 +478,7 @@
                                 Padding="2"
                                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                                 materialDesign:ButtonAssist.CornerRadius="25"
-                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_1">
                             <TextBlock Text="Update" />
                         </Button>
                     </Grid>
@@ -472,8 +486,15 @@
                 </Grid>
             </TabItem>
             <TabItem>
+                
                 <TabItem.Header >
-                    <StackPanel Orientation="Horizontal" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Width="310" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                                <GradientStop Color="#3aa0ff" Offset="0.0"/>
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
                         <materialDesign:PackIcon Kind="Billiards" 
                                                  Margin="10" 
                                                  VerticalAlignment="Center" 

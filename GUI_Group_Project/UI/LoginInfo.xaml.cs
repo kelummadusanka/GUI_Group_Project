@@ -77,7 +77,6 @@ namespace GUI_Group_Project
             {
                 Console.WriteLine("Registration Failed!" + ex);
                 MessageBox.Show(ex.Message, "Registration Failed!" );
-
                 var mywindow = Window.GetWindow(this);
                 mywindow.Close();
                 SignIn mainWindow = new SignIn();

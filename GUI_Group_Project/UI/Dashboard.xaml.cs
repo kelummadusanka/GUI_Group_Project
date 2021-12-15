@@ -56,9 +56,9 @@ namespace GUI_Group_Project
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            calenderwindow sw = new calenderwindow();
-            sw.Show();
-            
+            this.calnderGrid.Visibility = Visibility.Visible;
+
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -118,6 +118,33 @@ namespace GUI_Group_Project
             _2.Text = "";
             _3.Text = "";
             _4.Text = "";
+        }
+
+       private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.setNo1.Text = "5";
+            this.calnderGrid.Visibility = Visibility.Hidden;
+            using (DBContext context = new DBContext())
+            {
+
+                var yesterday = dateSelecter.SelectedDate;
+                Console.WriteLine(yesterday);
+                var yesterdayWinningLotto = context.Winninglottos.FirstOrDefault(w => EntityFunctions.TruncateTime(w.Date) == yesterday);
+
+                if (yesterdayWinningLotto != null)
+                {
+
+
+                    this.setNo1.Text = yesterdayWinningLotto.No1.ToString();
+                    setNo2.Text = yesterdayWinningLotto.No2.ToString();
+                    setNo3.Text = yesterdayWinningLotto.No3.ToString();
+                    setLetter.Text = yesterdayWinningLotto.Letter;
+
+                    calnderGrid.Visibility = Visibility.Hidden;
+
+                }
+
+            }
         }
     }
 }
