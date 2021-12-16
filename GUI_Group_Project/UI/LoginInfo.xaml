@@ -48,6 +48,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="50,10,100,10">
                     <TextBox
+                        IsEnabled="False"
                         Name="UserIDText"
                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
                         VerticalAlignment="Top"

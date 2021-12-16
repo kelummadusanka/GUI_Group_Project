@@ -165,7 +165,7 @@
                     </Grid.ColumnDefinitions>
                     <!--<materialDesign:Card Grid.Column="1"  Grid.Row="1" Grid.RowSpan="5" materialDesign:ShadowAssist.ShadowDepth="Depth5" Padding="32">-->
 
-                    <Grid Visibility="Visible" x:Name="calnderGrid" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Panel.ZIndex="4" Background="#FFD1F6DF">
+                    <Grid Visibility="Hidden" x:Name="calnderGrid" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" Panel.ZIndex="4" Background="#FFD1F6DF">
 
                         <Grid>
 

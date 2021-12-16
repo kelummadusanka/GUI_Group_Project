@@ -16,6 +16,10 @@ namespace GUI_Group_Project
         public LoginInfo()
         {
             InitializeComponent();
+            Random rnd = new Random();
+            int UserID = rnd.Next(1000, 9999);
+            UserIDText.Text = UserID.ToString();
+
 
         }
         private void ToggleButton_Checked1(object sender, RoutedEventArgs e) => ShowPasswordFunction(PasswordTxtBox1, PasswordBox1);
@@ -38,49 +42,63 @@ namespace GUI_Group_Project
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
-            PersonalInfo personalInfo = PersonalInfo.Current;
-            ContactInfo contactInfo = ContactInfo.Current;
-            DBContext Database = new DBContext();
-            try
+            if (!PasswordTxtBox1.IsVisible && PasswordBox1.Password != PasswordBox2.Password)
             {
-                Customer newCustomer = new Customer()
-                {
-
-                    FirstName = personalInfo.FirstName(),
-                    LastName = personalInfo.LastName(),
-                    IDCard = personalInfo.IDCardNo(),
-                    BirthDay = personalInfo.Birth(),
-
-                    Address = contactInfo.Address(),
-                    Street = contactInfo.Street(),
-                    City = contactInfo.City(),
-                    Zipcode = contactInfo.ZipCode(),
-                    Email = contactInfo.Email(),
-                    Mobile = contactInfo.Prefix()+contactInfo.Mobile(),
-
-                    Username = UsernameText.Text,
-                    ID = int.Parse(UserIDText.Text),
-                    Password = PasswordBox1.Password,
-                };
-                Console.WriteLine("new customer username is "+ newCustomer.Username);
-                Database.Customers.Add(newCustomer);
-                Database.SaveChanges();
-                var mywindow = Window.GetWindow(this);
-                EmailSender.Emailsender(newCustomer.Email,newCustomer.Username, newCustomer.Password);
-                MessageBox.Show("Successfully Registerd");
-                mywindow.Hide();
-                new SignIn().Show();
+                MessageBox.Show("Password and confirm Password are don't match!");
 
             }
-
-            catch (Exception ex)
+            else if (!PasswordBox1.IsVisible && PasswordTxtBox1.Text != PasswordTxtBox2.Text)
             {
-                Console.WriteLine("Registration Failed!" + ex);
-                MessageBox.Show(ex.Message, "Registration Failed!" );
-                var mywindow = Window.GetWindow(this);
-                mywindow.Close();
-                SignIn mainWindow = new SignIn();
-                mainWindow.Show();
+                MessageBox.Show("Password and confirm Password are don't match!");
+
+            }
+            else
+            {
+                PersonalInfo personalInfo = PersonalInfo.Current;
+                ContactInfo contactInfo = ContactInfo.Current;
+                DBContext Database = new DBContext();
+                try
+                {
+                    
+                    Customer newCustomer = new Customer()
+                    {
+
+                        FirstName = personalInfo.FirstName(),
+                        LastName = personalInfo.LastName(),
+                        IDCard = personalInfo.IDCardNo(),
+                        BirthDay = personalInfo.Birth(),
+
+                        Address = contactInfo.Address(),
+                        Street = contactInfo.Street(),
+                        City = contactInfo.City(),
+                        Zipcode = contactInfo.ZipCode(),
+                        Email = contactInfo.Email(),
+                        Mobile = contactInfo.Prefix() + contactInfo.Mobile(),
+
+                        Username = UsernameText.Text,
+                        ID = int.Parse(UserIDText.Text),
+                        Password = PasswordBox1.Password,
+                    };
+                    Console.WriteLine("new customer username is " + newCustomer.Username);
+                    Database.Customers.Add(newCustomer);
+                    Database.SaveChanges();
+                    var mywindow = Window.GetWindow(this);
+                    EmailSender.Emailsender(newCustomer.Email, newCustomer.Username, newCustomer.Password);
+                    MessageBox.Show("Successfully Registerd");
+                    mywindow.Hide();
+                    new SignIn().Show();
+
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Registration Failed!" + ex);
+                    MessageBox.Show(ex.Message, "Registration Failed!");
+                    var mywindow = Window.GetWindow(this);
+                    mywindow.Close();
+                    SignIn mainWindow = new SignIn();
+                    mainWindow.Show();
+                }
             }
 
 

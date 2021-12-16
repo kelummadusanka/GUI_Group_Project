@@ -70,31 +70,71 @@ namespace GUI_Group_Project
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Boughtlotto boughtlotto = new Boughtlotto()
-            {
-                No1 = int.Parse(_1.Text),
-                No2 = int.Parse(_2.Text),
-                No3 = int.Parse(_3.Text),
-                Letter = _4.Text,
-                LotteryID = int.Parse(DateTime.Now.ToString("MMdd")),
-                UserID = 25,
-                //Date = DateTime.Now.Date,
-                BoughtlottoID = 123
-
-            };
-            DBContext Database = new DBContext();
             try
             {
-                Database.Boughtlottos.Add(boughtlotto);
-                Database.SaveChanges();
-
-                MessageBox.Show("Succesfully Bought");
-
+                int No = Convert.ToInt32(_1.Text);
             }
-            catch (Exception ex)
+            catch (Exception h)
             {
-                MessageBox.Show(ex.Message + ex.InnerException.Message);
+                MessageBox.Show("Please Enter a digit for number 1");
+                return;
             }
+            try
+            {
+                int No = Convert.ToInt32(_2.Text);
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please  Enter a digit for number 2");
+                return;
+            }
+            try
+            {
+                int No = Convert.ToInt32(_3.Text);
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please  Enter a digit for number 3");
+                return;
+            }
+            try
+            {
+                int No = Convert.ToInt32(_4.Text);
+                MessageBox.Show("Please  Enter a Valid Letter");
+                return;
+            }
+            catch (Exception h)
+            {
+                DBContext Database = new DBContext();
+                try
+                {
+
+                    Boughtlotto boughtlotto = new Boughtlotto()
+                    {
+                        No1 = int.Parse(_1.Text),
+                        No2 = int.Parse(_2.Text),
+                        No3 = int.Parse(_3.Text),
+                        Letter = _4.Text,
+                        LotteryID = int.Parse(DateTime.Now.ToString("MMdd")),
+                        UserID = 25,
+                        //Date = DateTime.Now.Date,
+                        BoughtlottoID = 123
+
+                    };
+                    Database.Boughtlottos.Add(boughtlotto);
+                    Database.SaveChanges();
+
+                    MessageBox.Show("Succesfully Bought");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+
+
+            }
+           
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

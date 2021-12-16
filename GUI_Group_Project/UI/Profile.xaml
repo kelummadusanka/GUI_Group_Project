@@ -277,6 +277,7 @@
                                     <Setter Property="FontSize" Value="15"/>
                                     <Setter Property="Margin" Value="10 0"/>
                                 </Style>
+                                
 
                             </Grid.Resources>
                             <Grid.ColumnDefinitions>
@@ -342,58 +343,74 @@
                                 <TextBlock>Ship code</TextBlock>
                             </StackPanel>
                             <TextBox
+                                Text="{Binding FirstName}"
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Name="FirstNameEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding FirstName}"/>
                             <TextBox
+                                Text="{Binding LastName}"
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Name="LastNameEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="{Binding LastName}"/>
                             <TextBox
+                                Text="{Binding IDCard}"
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Name="IDCardEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding IDCard}"/>
                             <DatePicker
+                                SelectedDate="{Binding BirthDay}"
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding BirthDay}"/>
                             <TextBox
+                                Text="{Binding Address}"
                                 Grid.Row="4"
                                 Grid.Column="1"
                                 Name="AddressEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding Address}"/>
                             <TextBox
+                                Text="{Binding Street}"
                                 Grid.Row="5"
                                 Grid.Column="1"
                                 Name="StreetEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding Street}"/>
                             <TextBox
+                                Text="{Binding City}"
                                 Grid.Row="6"
                                 Grid.Column="1"
                                 Name="CityEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                 materialDesign:HintAssist.Hint="{Binding City}"/>
                             <TextBox
+                                Text="{Binding Zipcode}"
                                 Grid.Row="7"
                                 Grid.Column="1"
                                 Name="ShipCodeEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="{Binding Zipcode}"/>
 
@@ -412,7 +429,7 @@
                                     <Setter Property="Margin" Value="10"/>
                                 </Style>
                                 <Style TargetType="TextBlock">
-                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="FontSize" Value="16"/>
                                     <Setter Property="Margin" Value="10 0"/>
                                 </Style>
 
@@ -444,6 +461,9 @@
                             </StackPanel>
 
                             <TextBox
+                                TextWrapping="Wrap"
+                                Foreground="DarkGray"
+                                Text="{Binding Email}"
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Name="EmailEdit"
@@ -451,10 +471,12 @@
                                 VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="{Binding Email}"/>
                             <TextBox
+                                Text="{Binding Mobile}"
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Name="TeleEdit"
                                 Margin="10 0"
+                                Foreground="DarkGray"
                                 VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="{Binding Mobile}"/>
                         </Grid>

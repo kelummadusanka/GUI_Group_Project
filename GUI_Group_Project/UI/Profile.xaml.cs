@@ -1,6 +1,7 @@
 ﻿using GUI_Group_Project.Database;
 using GUI_Group_Project.Models;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -71,12 +72,13 @@ namespace GUI_Group_Project.UI
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+            int id = int.Parse(Application.Current.Properties["ID"].ToString());
             DBContext Database = new DBContext();
             try
             {
                 Customer UpdateCustomer = new Customer()
                 {
-
+                    ID = id,
                     FirstName = this.FirstNameEdit.Text,
                     LastName = this.LastNameEdit.Text,
                     IDCard = this.TeleEdit.Text,
@@ -91,26 +93,24 @@ namespace GUI_Group_Project.UI
 
                     Username = this.TeleEdit.Text,
                 };
+
+                int customerid = int.Parse(Application.Current.Properties["ID"].ToString());
+                var custmer = Database.Customers.FirstOrDefault(c => c.ID == customerid);
+                custmer = UpdateCustomer;
+                
                 Console.WriteLine("new customer username is " + UpdateCustomer.Username);
-                Database.Customers.Add(UpdateCustomer);
+                //Database.Entry(UpdateCustomer).State = EntityState.Modified;
                 Database.SaveChanges();
-                var mywindow = Window.GetWindow(this);
-                EmailSender.Emailsender(UpdateCustomer.Email, UpdateCustomer.Username, UpdateCustomer.Password);
-                MessageBox.Show("Successfully Registerd");
-                mywindow.Hide();
-                new SignIn().Show();
+
+                MessageBox.Show("Successfully Updated");
 
             }
 
             catch (Exception ex)
             {
-                Console.WriteLine("Registration Failed!" + ex);
-                MessageBox.Show(ex.Message, "Registration Failed!");
+                Console.WriteLine("Update Failed!" + ex);
+                MessageBox.Show(ex.Message, "Update Failed!");
 
-                var mywindow = Window.GetWindow(this);
-                mywindow.Close();
-                SignIn mainWindow = new SignIn();
-                mainWindow.Show();
             }
         }
     }
