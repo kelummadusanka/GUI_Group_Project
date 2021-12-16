@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class changeprimarykey : DbMigration
     {
         public override void Up()
         {
@@ -25,7 +25,7 @@
                 "dbo.Customers",
                 c => new
                     {
-                        ID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
                         IDCard = c.String(),

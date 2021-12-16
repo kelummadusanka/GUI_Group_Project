@@ -109,9 +109,9 @@
     </ApplicationDefinition>
     <Compile Include="Database\DBContext.cs" />
     <Compile Include="EmailSender.cs" />
-    <Compile Include="Migrations\202112050524555_InitialCreate.cs" />
-    <Compile Include="Migrations\202112050524555_InitialCreate.designer.cs">
-      <DependentUpon>202112050524555_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202112160550270_change primary key.cs" />
+    <Compile Include="Migrations\202112160550270_change primary key.designer.cs">
+      <DependentUpon>202112160550270_change primary key.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Boughtlotto.cs" />
@@ -206,8 +206,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202112050524555_InitialCreate.resx">
-      <DependentUpon>202112050524555_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112160550270_change primary key.resx">
+      <DependentUpon>202112160550270_change primary key.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

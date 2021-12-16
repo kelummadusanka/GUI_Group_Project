@@ -120,7 +120,7 @@
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
     Height="100"
     materialDesign:ButtonAssist.CornerRadius="50"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_2">
+    ToolTip="Click here to go to Buy Now" Click="Button_Click_2">
                         <TextBlock
       Text="Buy Now" FontSize="40"/>
                     </Button>
@@ -129,7 +129,7 @@
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
     Height="100"
     materialDesign:ButtonAssist.CornerRadius="50"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_3">
+    ToolTip="Click here to go to View Results" Click="Button_Click_3">
                         <TextBlock
       Text="View Results" FontSize="40"/>
                     </Button>
@@ -203,7 +203,7 @@
                     <Button Grid.Column="2" Grid.Row="2"
   Style="{StaticResource MaterialDesignRaisedAccentButton}"
   Width="200" Height="100"
-  ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+  ToolTip="Click here to set the dates"
   Content="Set the Date" FontSize="25" Click="Button_Click"  />
 
                     <materialDesign:Card x:Name="FindWinnigNumber" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"
@@ -330,14 +330,14 @@
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
     Height="90"
     materialDesign:ButtonAssist.CornerRadius="50"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_1">
+    ToolTip="Enter the lucky numbers you want in the above boxes and then click here to buy" Click="Button_Click_1">
                         <TextBlock
       Text="Buy Now" FontSize="40"/>
                     </Button>
 
                     <Button Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="6" materialDesign:ShadowAssist.ShadowDepth="Depth3"
   Style="{StaticResource MaterialDesignOutlinedButton}"
-  ToolTip="MaterialDesignOutlinedButton"
+  
   Content="Buy More" Height="70" Width="210" FontSize="30" Click="Button_Click_4"/>
 
                 </Grid>
@@ -546,7 +546,12 @@
     TextWrapping="Wrap"
     Text="Welcome to the  Lottery Buying Application. Here you can buy Lotteries as much as you want." />
                 </GroupBox>
+                <Button ToolTip="Log out" Height="30" Background="Red" Margin="10,200,10,20" BorderBrush="Transparent" Click="Button_Click_6">
+                    <materialDesign:PackIcon  Kind="Power" Foreground="White" />
+
+                </Button>
             </StackPanel>
+            
         </materialDesign:Card>
 
 

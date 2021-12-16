@@ -1,7 +1,12 @@
-﻿namespace GUI_Group_Project.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GUI_Group_Project.Models
 {
     class Customer
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

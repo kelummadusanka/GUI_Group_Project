@@ -7,13 +7,13 @@ namespace GUI_Group_Project.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class changeprimarykey : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changeprimarykey));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112050524555_InitialCreate"; }
+            get { return "202112160550270_change primary key"; }
         }
         
         string IMigrationMetadata.Source
